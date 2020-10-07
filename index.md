@@ -1,38 +1,24 @@
 ---
-title: Welcome
+title: 欢迎使用mBox
 ---
 
-This is the **Edition** template from [CloudCannon](http://cloudcannon.com/).
-**Edition** is perfect for documenting your product, application or service.
-It's populated with example content to give you some ideas.
+# 集成商摄像机运维工具箱
 
-ChatApp is a fictional chat application for sending messages and media to others.
-Teams and friend groups would use ChatApp to stay up to date if it existed.
+本工具用于系统集成商，主要解决成千上万摄像机人工处理效率低下问题。
 
-> [Sign up](http://example.com/signup) or learn more about ChatApp at [example.com](http://example.com/).
+* 批量修改摄像机设置
+* 监控摄像机在线状态
+* 查看摄像机图像质量
 
-### Getting Started
+ONVIF为网络视频产品提供标准化网络开放式接口，市面摄像机大多支持ONVIF协议，基于ONVIF协议进行摄像机设备巡检，将巡检取到的数据存储到MYSQL数据库，建立一机一档。ONVIF中的其他部分比如音视频流则通过RTP/RTSP获取 。
 
-Getting a message sent is quick and easy with ChatApp:
+## 软件下载
 
-1. Sign up for an account
-2. Add your friends from their email addresses
-3. Type a message or send a photo
+* Windows
+* Mac OS
+* Linux
 
-> Feel free to send us a message at [feedback@example.com](mailto:feedback@example.com) with your feedback.
+## 系统部署
 
-### Features
+## 操作文档
 
-Explore more of ChatApp by reading about our features:
-
-#### Media
-
-Send images, videos and other media to people. Sources include your computer, phone and Facebook.
-
-#### Contact Syncing
-
-Sync your contact list with your phone and/or Facebook contacts. Never lose your contacts between devices again!
-
-#### Devices
-
-ChatApp is available everywhere. Find out how to set it up on your all your devices.
