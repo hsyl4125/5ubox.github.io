@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Search | mBox集成商工具箱</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Search" />
+<meta name="author" content="马鹏飞" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Product documentation template for Jekyll." />
+<meta property="og:description" content="Product documentation template for Jekyll." />
+<link rel="canonical" href="http://0.0.0.0:4000/search/" />
+<meta property="og:url" content="http://0.0.0.0:4000/search/" />
+<meta property="og:site_name" content="mBox集成商工具箱" />
+<script type="application/ld+json">
+{"@type":"WebPage","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/siteicon.png"},"name":"马鹏飞"},"headline":"Search","author":{"@type":"Person","name":"马鹏飞"},"description":"Product documentation template for Jekyll.","url":"http://0.0.0.0:4000/search/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="mBox集成商工具箱" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?f556111e6dcbc68ea7a284194067ca08";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>			
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="mBox集成商工具箱 logo"></a>
+				mBox集成商工具箱
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">欢迎使用mBox</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/">Linux</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/">vim全局替换命令</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/changelog/">Change Log</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>mBox集成商工具箱</h2>
+				<h3>Search</h3>
+			</div>
+			<article class="content">
+				<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+<ul id="search-results"></ul>
+
+<script>
+	window.data = {
+		
+			
+				
+					
+					
+
+					"linux-vim-e5-85-a8-e5-b1-80-e6-9b-bf-e6-8d-a2-e5-91-bd-e4-bb-a4": {
+						"id": "linux-vim-e5-85-a8-e5-b1-80-e6-9b-bf-e6-8d-a2-e5-91-bd-e4-bb-a4",
+						"title": "vim全局替换命令",
+						"category": "",
+						"url": " /Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/",
+						"content": "语法为 :[addr]s 源字符串 目的字符串 [option] 全局替换命令为：:%s 源字符串 目的字符串 g [addr] 表示检索范围，省略时表示当前行。 如：\"1，20\" ：表示从第1行到20行； \"%\" ：表示整个文件，同\"1,$\"； \". ,$\" ：从当前行到文件尾； s : 表示替换操作 [option] : 表示操作类型 如：g 表示全局替换; c 表示进行确认 p 表示替代结果逐行显示（Ctrl + L恢复屏幕）； 省略option时仅对每行第一个匹配串进行替换； 如果在源字符串和目的字符串中出现特殊字符，需要用\"\\\"转义 下面是一些例子： #将That or this 换成 This or that :%s \\(That\\) or \\(this\\) \\u\\2 or \\l\\1 #将句尾的child换成children :%s child\\([ ,.;!:?]\\) children\\1 g #将mgi r abox换成mgi r asquare :g mg\\([ira]\\)box s mg my\\1square g &lt;=&gt; :g mg[ira]box s box square g #将多个空格换成一个空格 :%s * g #使用空格替换句号或者冒号后面的一个或者多个空格 :%s \\([:.]\\) * \\1 g"
+					}
+
+					
+				
+			
+		
+	};
+</script>
+<script src="/scripts/lunr.min.js"></script>
+<script src="/scripts/search.js"></script>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

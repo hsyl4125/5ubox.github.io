@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: Edition Template
+title: mBox集成商工具箱
 url: "https://long-pig.cloudvent.net"
 baseurl:
 google_analytics_key:
@@ -11,11 +11,11 @@ show_full_navigation: true
 logo: /siteicon.png
 description: Product documentation template for Jekyll.
 author:
-  name:
-  email:
-  twitter: # twitter username without the @ symbol
+  name: 马鹏飞
+  email: mapengfei4125@163.com
+  weixin: ttsysprep
 social:
-  name: Edition Template
+  name: mBox集成商工具箱
   links:
     - https://github.com/CloudCannon/edition-jekyll-template
 
@@ -23,8 +23,8 @@ social:
 # Build
 
 timezone: Etc/UTC
-port                : 4000
-host                : 0.0.0.0
+port: 4000
+host: 0.0.0.0
 permalink: pretty
 
 plugins:

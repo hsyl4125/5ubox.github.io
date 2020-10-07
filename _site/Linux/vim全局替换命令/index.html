@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>vim全局替换命令 | mBox集成商工具箱</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="vim全局替换命令" />
+<meta name="author" content="马鹏飞" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="语法为 :[addr]s/源字符串/目的字符串/[option]" />
+<meta property="og:description" content="语法为 :[addr]s/源字符串/目的字符串/[option]" />
+<link rel="canonical" href="http://0.0.0.0:4000/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/" />
+<meta property="og:url" content="http://0.0.0.0:4000/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/" />
+<meta property="og:site_name" content="mBox集成商工具箱" />
+<script type="application/ld+json">
+{"@type":"Article","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/siteicon.png"},"name":"马鹏飞"},"headline":"vim全局替换命令","author":{"@type":"Person","name":"马鹏飞"},"description":"语法为 :[addr]s/源字符串/目的字符串/[option]","url":"http://0.0.0.0:4000/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="mBox集成商工具箱" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?f556111e6dcbc68ea7a284194067ca08";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>			
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="mBox集成商工具箱 logo"></a>
+				mBox集成商工具箱
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav class="full-navigation">
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">欢迎使用mBox</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/">Linux</a>
+							<ul>
+								
+									<li class="nav-item current"><a href="/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/">vim全局替换命令</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/changelog/">Change Log</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>Linux</h2>
+				<h3>vim全局替换命令</h3>
+			</div>
+			<article class="content">
+				<p><strong>语法为 :[addr]s/源字符串/目的字符串/[option]</strong></p>
+
+<p><strong>全局替换命令为：:%s/源字符串/目的字符串/g</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>addr] 表示检索范围，省略时表示当前行。
+如：<span class="s2">"1，20"</span> ：表示从第1行到20行；
+<span class="s2">"%"</span> ：表示整个文件，同<span class="s2">"1,$"</span>；
+<span class="s2">". ,$"</span> ：从当前行到文件尾；
+s : 表示替换操作
+<span class="o">[</span>option] : 表示操作类型
+如：g 表示全局替换<span class="p">;</span> 
+c 表示进行确认
+p 表示替代结果逐行显示（Ctrl + L恢复屏幕）；
+省略option时仅对每行第一个匹配串进行替换；
+如果在源字符串和目的字符串中出现特殊字符，需要用<span class="s2">"</span><span class="se">\"</span><span class="s2">转义
+</span></code></pre></div></div>
+
+<p>下面是一些例子：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#将That or this 换成 This or that</span>
+:%s/<span class="se">\(</span>That<span class="se">\)</span> or <span class="se">\(</span>this<span class="se">\)</span>/<span class="se">\u\2</span> or <span class="se">\l\1</span>/
+
+<span class="c">#将句尾的child换成children</span>
+:%s/child<span class="se">\(</span><span class="o">[</span> ,.<span class="p">;</span><span class="o">!</span>:?]<span class="se">\)</span>/children<span class="se">\1</span>/g
+
+<span class="c">#将mgi/r/abox换成mgi/r/asquare</span>
+:g/mg<span class="se">\(</span><span class="o">[</span>ira]<span class="se">\)</span>box/s//mg//my<span class="se">\1</span>square/g    &lt;<span class="o">=&gt;</span>  :g/mg[ira]box/s/box/square/g
+
+<span class="c">#将多个空格换成一个空格</span>
+:%s/  <span class="k">*</span>/ /g
+
+<span class="c">#使用空格替换句号或者冒号后面的一个或者多个空格</span>
+:%s/<span class="se">\(</span><span class="o">[</span>:.]<span class="se">\)</span>  <span class="k">*</span>/<span class="se">\1</span> /g
+</code></pre></div></div>
+
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>

@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://0.0.0.0:4000/contact-syncing/facebook/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/contact-syncing/phone/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/devices/android/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/devices/ios/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/media/documents/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/media/images/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/media/video/</loc>
-<lastmod>2020-10-06T06:53:32+00:00</lastmod>
+<loc>http://0.0.0.0:4000/Linux/vim%E5%85%A8%E5%B1%80%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4/</loc>
+<lastmod>2020-10-07T04:23:16+00:00</lastmod>
 </url>
 <url>
 <loc>http://0.0.0.0:4000/2016/01/12/media-support/</loc>
