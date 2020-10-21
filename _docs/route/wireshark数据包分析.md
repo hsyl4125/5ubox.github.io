@@ -11,7 +11,7 @@ tags: wireshark,tcpdump,抓包,分析
   
 **捕捉过滤器语法**    
   
-**语法：<Protocol> <Direction> <Host(s)> < Value> < Logical Operations> <Other expression> **
+**语法：<Protocol> <Direction> <Host(s)> < Value> < Logical Operations> <Other expression> **  
 **Protocol（协议）:** ether，fddi， ip，arp，rarp，decnet，lat， sca，moprc，mopdl， tcp ， udp 等，如果没指明协议类型，则默认为捕捉所有支持的协议。    
 **Direction（方向）:**src， dst，src and dst， src or dst等，如果没指明方向，则默认使用 “src or dst” 作为关键字。    
 **Host(s):** net, port, host, portrange等，默认使用”host”关键字，”src 10.1.1.1″与”src host 10.1.1.1″等价。    
@@ -60,9 +60,12 @@ tags: wireshark,tcpdump,抓包,分析
 **只捕获特定端口的流量**  
   
 `tcp portrange 8000-9000 an port 80`    
-捕获端口8000-9000之间和80端口的流量  
+捕获端口8000-9000之间和80端口的流量    
 `port 5060`    
-捕获sip流量，因为sip的默认端口是5060。举一反三：`port 22`#捕获ssh流量  
+捕获sip流量，因为sip的默认端口是5060。
+举一反三：    
+`port 22`    
+捕获ssh流量     
   
 **捕获电子邮件的流量**  
   
@@ -86,7 +89,7 @@ tags: wireshark,tcpdump,抓包,分析
   
 捕获过滤器使用BPF语法，而显示过滤器使用wireshark专有格式。并且显示显示过滤器区分大小写，大部分使用的是小写。    
   
-> 语法格式：`Protocol String1 String2 Comparision operator Value Logical Operations Other expression`  
+> 语法格式：Protocol  String1 String2 Comparision operator Value Logical Operations Other expression
   
 Protocol(协议)：该选项用来指定协议。该选项可以使用位于OSI模型第2-7层的协议。    
 String1,String2(可选项)：协议的子类。    
@@ -125,31 +128,38 @@ Logical expression: 指定逻辑运算符.
     
 **字段存在过滤器**   
   
-`bootp.option.hostname`显示所有DHCP流量，包含主机名（DHCP是基于BOOTP）。    
-`http.host`显示所有包含http主机名字段的数据包。通常是由一个客户端发给web服务器的请求。    
-`ftp.request.command` 显示所有ftp命令数据，如USER、PASS、RETR命令。    
+`bootp.option.hostname`   
+显示所有DHCP流量，包含主机名（DHCP是基于BOOTP）。    
+`http.host`    
+显示所有包含http主机名字段的数据包。通常是由一个客户端发给web服务器的请求。    
+`ftp.request.command`    
+显示所有ftp命令数据，如USER、PASS、RETR命令。    
   
 **特有的过滤器**    
-`tcp.analysis.flags` 显示所有与tcp表示有关的包，包括丢包、重发和零窗口标志。    
-`tcp.analysis.zero_window`  显示被标志的包，表示发送方的缓存空间已满    
+`tcp.analysis.flags`    
+显示所有与tcp表示有关的包，包括丢包、重发和零窗口标志。    
+`tcp.analysis.zero_window`     
+显示被标志的包，表示发送方的缓存空间已满    
   
 ### 常用显示过滤器及其表达式  
   
 **数据链路层：**    
-  
+
+`eth.src == 04:f9:38:ad:13:26`    
 筛选mac地址为04:f9:38:ad:13:26的数据包    
-`eth.src == 04:f9:38:ad:13:26`  
-  
+`eth.src == 04:f9:38:ad:13:26`   
 筛选源mac地址为04:f9:38:ad:13:26的数据包    
-`eth.src == 04:f9:38:ad:13:26`  
-  
-**网络层：**  
-  
-筛选ip地址为192.168.1.1的数据包:`ip.addr == 192.168.1.1`  
-筛选192.168.1.0网段的数据:`ip contains “192.168.1”`  
-筛选192.168.1.1和192.168.1.2之间的数据包:`ip.addr == 192.168.1.1 && ip.addr == 192.168.1.2`    
-  
-筛选从192.168.1.1到192.168.1.2的数据包:`ip.src == 192.168.1.1 && ip.dst == 192.168.1.2`    
+
+**网络层：**    
+
+`ip.addr == 192.168.1.1`    
+筛选ip地址为192.168.1.1的数据包    
+`ip contains “192.168.1”`  
+筛选192.168.1.0网段的数据    
+`ip.addr == 192.168.1.1 && ip.addr == 192.168.1.2`    
+筛选192.168.1.1和192.168.1.2之间的数据包    
+`ip.src == 192.168.1.1 && ip.dst == 192.168.1.2`    
+筛选从192.168.1.1到192.168.1.2的数据包    
   
 **传输层：**  
   
@@ -162,5 +172,5 @@ Logical expression: 指定逻辑运算符.
 **应用层:**   
 `http.request`:表示请求头中的第一行（如GET index.jsp HTTP/1.1）    
 `http.response`:表示响应头中的第一行（如HTTP/1.1 200 OK），其他头部都用`http.header_name`形式。    
-筛选url中包含.php的http数据包:`-http.request.uri contains “.php”`    
-筛选内容包含username的http数据包:`http contains “username”`    
+`-http.request.uri contains “.php”`:筛选url中包含.php的http数据包    
+`http contains “username”`:筛选内容包含username的http数据包    
