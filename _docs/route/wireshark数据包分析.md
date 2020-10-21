@@ -18,8 +18,10 @@ tags: wireshark,tcpdump,抓包,分析
 **Host(s):** net, port, host, portrange等，默认使用”host”关键字，”src 10.1.1.1″与”src host 10.1.1.1″等价。    
 **Logical Operations（逻辑运算）:** not, and, or 等，否(“not”)具有最高的优先级。或(“or”)和与(“and”)具有相同的优先级，运算时从左至右进行。   
  
-### 常见使用的捕获过滤语句      
+### 常见使用的捕获过滤语句    
+
 **只（不）捕获某主机的HTTP流量**  
+
 `host 192.168.5.231 and port 80 and http`    
 只捕获主机192.168.5.231 的http流量。注意如果你的HTTP端口为8080，把80 改为8080。  
 `port 80 and http`    
@@ -83,6 +85,7 @@ tags: wireshark,tcpdump,抓包,分析
 捕获vlan 中主机192.168.5.0 ，前提是有vlan，在wifi中不一定可以捕获到相应的流量，局域网（公司，学校里面的网络应该有vlan)    
   
 **更多的案例，可以参考**    
+
 端口常识：https://svn.nmap.org/nmap/nmap-services#    
 常见协议及其端口: http://tool.chinaz.com/port/#    
   
