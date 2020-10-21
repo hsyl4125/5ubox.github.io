@@ -11,7 +11,7 @@ tags: wireshark,tcpdump,抓包,分析
   
 **捕捉过滤器语法**    
   
-> 语法：<Protocol> <Direction> <Host(s)> <Value> <Logical Operations> <Other expression>    
+> 语法: `<Protocol> <Direction> <Host(s)> <Value> <Logical Operations> <Other expression>`    
 
 **Protocol（协议）:** ether，fddi， ip，arp，rarp，decnet，lat， sca，moprc，mopdl， tcp ， udp 等，如果没指明协议类型，则默认为捕捉所有支持的协议。    
 **Direction（方向）:**src， dst，src and dst， src or dst等，如果没指明方向，则默认使用 “src or dst” 作为关键字。    
@@ -45,7 +45,7 @@ tags: wireshark,tcpdump,抓包,分析
 `dst 192.168.5.231 and port 53`    
 只捕获dns服务器相应主机192.168.5.231的dns流量。  
 `port 53`    
-捕获接口中的所有主机的dns流量  
+捕获接口中的所有主机的dns流量    
   
 **只（不）捕获APR流量**  
   
@@ -175,7 +175,11 @@ Logical expression: 指定逻辑运算符.
 筛选从12345端口到80端口的数据包    
 
 **应用层:**   
-`http.request`:表示请求头中的第一行（如GET index.jsp HTTP/1.1）    
-`http.response`:表示响应头中的第一行（如HTTP/1.1 200 OK），其他头部都用`http.header_name`形式。    
-`-http.request.uri contains “.php”`:筛选url中包含.php的http数据包    
-`http contains “username”`:筛选内容包含username的http数据包    
+`http.request`    
+表示请求头中的第一行（如GET index.jsp HTTP/1.1）    
+`http.response`    
+表示响应头中的第一行（如HTTP/1.1 200 OK），其他头部都用`http.header_name`形式。    
+`-http.request.uri contains “.php”`    
+筛选url中包含.php的http数据包    
+`http contains “username”`    
+筛选内容包含username的http数据包    
