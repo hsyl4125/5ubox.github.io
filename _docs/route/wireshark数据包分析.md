@@ -11,7 +11,7 @@ tags: wireshark,tcpdump,抓包,分析
   
 **捕捉过滤器语法**    
   
-> 语法: `<Protocol> <Direction> <Host(s)> <Value> <Logical Operations> <Other expression>`    
+> 语法: <Protocol> <Direction> <Host(s)> <Value> <Logical Operations> <Other expression>
 
 **Protocol（协议）:** ether，fddi， ip，arp，rarp，decnet，lat， sca，moprc，mopdl， tcp ， udp 等，如果没指明协议类型，则默认为捕捉所有支持的协议。    
 **Direction（方向）:**src， dst，src and dst， src or dst等，如果没指明方向，则默认使用 “src or dst” 作为关键字。    
