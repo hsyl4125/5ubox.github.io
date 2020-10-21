@@ -26,6 +26,11 @@ timezone: Etc/UTC
 port: 4000
 host: 0.0.0.0
 permalink: pretty
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 plugins:
   - jekyll-sitemap
