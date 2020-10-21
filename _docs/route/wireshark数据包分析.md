@@ -12,79 +12,57 @@ tags: wireshark,tcpdump,抓包,分析
   - 捕捉过滤器语法
 
     语法：<Protocol> <Direction> <Host(s)> < Value> < Logical Operations> <Other expression>`
-
 * Protocol（协议）: ether，fddi， ip，arp，rarp，decnet，lat， sca，moprc，mopdl， tcp ， udp 等，如果没指明协议类型，则默认为捕捉所有支持的协议。
-
 * Direction（方向）:src， dst，src and dst， src or dst等，如果没指明方向，则默认使用 “src or dst” 作为关键字。
-
 * Host(s): net, port, host, portrange等，默认使用”host”关键字，”src 10.1.1.1″与”src host 10.1.1.1″等价。
-
 * Logical Operations（逻辑运算）:not, and, or 等，否(“not”)具有最高的优先级。或(“or”)和与(“and”)具有相同的优先级，运算时从左至右进行。
 
 ### 常见使用的捕获过滤语句
 
-  只（不）捕获某主机的HTTP流量
+**只（不）捕获某主机的HTTP流量**
 
-  `host 192.168.5.231 and port 80 and http`
+`host 192.168.5.231 and port 80 and http`
+只捕获主机192.168.5.231 的http流量。注意如果你的HTTP端口为8080，把80 改为8080。
 
-  只捕获主机192.168.5.231 的http流量。注意如果你的HTTP端口为8080，把80 改为8080。
+`port 80 and http`
+捕获所有经过该接口的http流量。注意如果你的HTTP端口为8080，把80 改为8080。
 
-  `port 80 and http`
-
-  捕获所有经过该接口的http流量。注意如果你的HTTP端口为8080，把80 改为8080。
-
-  `host 192.168.5.231 and not port 80`
-
-  捕获主机192.168.5.231除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
+`host 192.168.5.231 and not port 80`
+捕获主机192.168.5.231除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
 
   `not port 80`
-
   捕获除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
 
   `not port 80 and !http`
-
   捕获除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
 
-  只捕获某主机的所有流量
-
   `host 192.168.5.231`
-
   捕获源目主机均为192.168.5.231
 
   `dst 192.168.5.231`
-
   捕获目的主机均为192.168.5.231
 
   `src 192.168.5.231`
-
   捕获来源主机均为192.168.5.231
 
   `net 192.168.5.0/24`
-
   捕获网段为d192.168.5的所有主机的所有流量
 
-  只捕获某主机的DNS流量
-
   `host 192.168.5.231 and port 53`
-
   只捕获主机192.168.5.231 的dns流量。
 
   `src 192.168.5.231 and port 53`
-
   只捕获主机192.168.5.231 对外的dns 的流量。
 
   `dst 192.168.5.231 and port 53`
-
   只捕获dns服务器相应主机192.168.5.231的dns流量。
 
   `port 53`
-
   捕获接口中的所有主机的dns流量
 
-  - **只（不）捕获APR流量**
+* 只（不）捕获APR流量
 
   `host 192.168.5.231 and arp`
-
   只捕获主机192.168.5.231 的arp流量。
 
   `host 192.168.5.231 and !arp`
@@ -92,44 +70,36 @@ tags: wireshark,tcpdump,抓包,分析
   只捕获主机192.168.5.231 除arp外的所有流量。
 
   `arp`
-
   捕获接口中的所有arp请求
 
   `!arp`
-
   捕获接口中所有非arpq请求。
 
-  - **只捕获特定端口的流量**
+* 只捕获特定端口的流量
 
   `tcp portrange 8000-9000 an port 80`
-
   捕获端口8000-9000之间和80端口的流量
 
   `port 5060`
-
   捕获sip流量，因为sip的默认端口是5060。举一反三：`port 22`#捕获ssh流量
 
-  - **捕获电子邮件的流量**
+* **捕获电子邮件的流量**
 
   `host 192.168.5.231 and port 25`
-
   捕获主机192.168.5.231 的POP3协议的流量。
 
   `port 25 and portrange 110-143`
-
   因为电子邮件的协议：SMTP、POP3、IMAP4，所以捕获端口的流量。
 
-  - **捕获vlan 的流量**
+* **捕获vlan 的流量**
 
   `vlan`
-
   捕获所有vlan 的流量
 
   `vlan and (host 192.168.5.0 and port 80)`
-
   捕获vlan 中主机192.168.5.0 ，前提是有vlan，在wifi中不一定可以捕获到相应的流量，局域网（公司，学校里面的网络应该有vlan)
 
-  - **更多的案例，可以参考**
+* **更多的案例，可以参考**
 
     端口常识：https://svn.nmap.org/nmap/nmap-services#
 
