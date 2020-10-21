@@ -11,7 +11,7 @@ tags: wireshark,tcpdump,抓包,分析
   
 **捕捉过滤器语法**    
   
-> 语法：<Protocol> <Direction> <Host(s)> <Value> <Logical Operations> <Other expression>
+> 语法：<Protocol> <Direction> <Host(s)> <Value> <Logical Operations> <Other expression>    
 
 **Protocol（协议）:** ether，fddi， ip，arp，rarp，decnet，lat， sca，moprc，mopdl， tcp ， udp 等，如果没指明协议类型，则默认为捕捉所有支持的协议。    
 **Direction（方向）:**src， dst，src and dst， src or dst等，如果没指明方向，则默认使用 “src or dst” 作为关键字。    
@@ -163,12 +163,16 @@ Logical expression: 指定逻辑运算符.
 筛选从192.168.1.1到192.168.1.2的数据包    
   
 **传输层：**  
-  
-筛选tcp协议的数据包:`tcp`    
-筛选除tcp协议以外的数据包:`!tcp`    
-筛选端口为80的数据包:`tcp.port == 80`    
-筛选12345端口和80端口之间的数据包:`tcp.port == 12345 && tcp.port == 80`    
-筛选从12345端口到80端口的数据包:`tcp.srcport == 12345 && tcp.dstport == 80`    
+`tcp`    
+筛选tcp协议的数据包    
+`!tcp`    
+筛选除tcp协议以外的数据包    
+`tcp.port == 80`    
+筛选端口为80的数据包    
+`tcp.port == 12345 && tcp.port == 80`    
+筛选12345端口和80端口之间的数据包    
+`tcp.srcport == 12345 && tcp.dstport == 80`    
+筛选从12345端口到80端口的数据包    
 
 **应用层:**   
 `http.request`:表示请求头中的第一行（如GET index.jsp HTTP/1.1）    
