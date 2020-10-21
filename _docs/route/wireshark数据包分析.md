@@ -21,82 +21,82 @@ tags: wireshark,tcpdump,抓包,分析
 
 **只（不）捕获某主机的HTTP流量**
 
-`host 192.168.5.231 and port 80 and http`
+`host 192.168.5.231 and port 80 and http`  
 只捕获主机192.168.5.231 的http流量。注意如果你的HTTP端口为8080，把80 改为8080。
 
-`port 80 and http`
+`port 80 and http`  
 捕获所有经过该接口的http流量。注意如果你的HTTP端口为8080，把80 改为8080。
 
-`host 192.168.5.231 and not port 80`
+`host 192.168.5.231 and not port 80`  
 捕获主机192.168.5.231除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
 
-  `not port 80`
+  `not port 80`  
   捕获除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
 
-  `not port 80 and !http`
+  `not port 80 and !http`  
   捕获除 http 之外的其他所有流量，注意如果你的HTTP端口为8080，把80 改为8080。
 
-  `host 192.168.5.231`
+  `host 192.168.5.231`  
   捕获源目主机均为192.168.5.231
 
-  `dst 192.168.5.231`
+  `dst 192.168.5.231`  
   捕获目的主机均为192.168.5.231
 
-  `src 192.168.5.231`
+  `src 192.168.5.231`  
   捕获来源主机均为192.168.5.231
 
-  `net 192.168.5.0/24`
+  `net 192.168.5.0/24`  
   捕获网段为d192.168.5的所有主机的所有流量
 
-  `host 192.168.5.231 and port 53`
+  `host 192.168.5.231 and port 53`  
   只捕获主机192.168.5.231 的dns流量。
 
-  `src 192.168.5.231 and port 53`
+  `src 192.168.5.231 and port 53`  
   只捕获主机192.168.5.231 对外的dns 的流量。
 
-  `dst 192.168.5.231 and port 53`
+  `dst 192.168.5.231 and port 53`  
   只捕获dns服务器相应主机192.168.5.231的dns流量。
 
-  `port 53`
+  `port 53`  
   捕获接口中的所有主机的dns流量
 
 * 只（不）捕获APR流量
 
-  `host 192.168.5.231 and arp`
+  `host 192.168.5.231 and arp`  
   只捕获主机192.168.5.231 的arp流量。
 
-  `host 192.168.5.231 and !arp`
+  `host 192.168.5.231 and !arp`  
 
   只捕获主机192.168.5.231 除arp外的所有流量。
 
-  `arp`
+  `arp`  
   捕获接口中的所有arp请求
 
-  `!arp`
+  `!arp`  
   捕获接口中所有非arpq请求。
 
 * 只捕获特定端口的流量
 
-  `tcp portrange 8000-9000 an port 80`
+  `tcp portrange 8000-9000 an port 80`  
   捕获端口8000-9000之间和80端口的流量
 
-  `port 5060`
+  `port 5060`  
   捕获sip流量，因为sip的默认端口是5060。举一反三：`port 22`#捕获ssh流量
 
 * **捕获电子邮件的流量**
 
-  `host 192.168.5.231 and port 25`
+  `host 192.168.5.231 and port 25`  
   捕获主机192.168.5.231 的POP3协议的流量。
 
-  `port 25 and portrange 110-143`
+  `port 25 and portrange 110-143`  
   因为电子邮件的协议：SMTP、POP3、IMAP4，所以捕获端口的流量。
 
 * **捕获vlan 的流量**
 
-  `vlan`
+  `vlan`  
   捕获所有vlan 的流量
 
-  `vlan and (host 192.168.5.0 and port 80)`
+  `vlan and (host 192.168.5.0 and port 80)`  
   捕获vlan 中主机192.168.5.0 ，前提是有vlan，在wifi中不一定可以捕获到相应的流量，局域网（公司，学校里面的网络应该有vlan)
 
 * **更多的案例，可以参考**
